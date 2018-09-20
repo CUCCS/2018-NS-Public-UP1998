@@ -1,4 +1,7 @@
+# 网卡图片
 ![](无线网卡.jpg)
+	
+# 网卡详情	
 	max # scan SSIDs: 4
 	max scan IEs length: 2285 bytes
 	max # sched scan SSIDs: 0
