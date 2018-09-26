@@ -67,7 +67,7 @@ iptables -t nat -A POSTROUTING　-s 192.168.56.0/24 -o eth1 -j  MASQUERADE
 * 攻击者ping通网关
 ![](攻击者ping网关.PNG)
 * 攻击者ping靶机不通
-![](攻击者ping靶机.PNG)
+![](攻击者ping靶机不通.PNG)
 * 攻击者连网
 ![](攻击者连网.PNG)
 * 网关ping通攻击者
@@ -83,7 +83,7 @@ iptables -t nat -A POSTROUTING　-s 192.168.56.0/24 -o eth1 -j  MASQUERADE
 
 ### 六、问题与解决方法
 * 网关无法打开双网卡的问题
-① ```gedit /etc/network/interfaces```
+1.  ```gedit /etc/network/interfaces```
 打开interfaces文件后输入:
 ``` 
 # This file describes the network interfaces available on your system
@@ -100,7 +100,7 @@ iface eth0 inet dhcp
 allow-hotplug eth1
 iface eth1 inet dhcp
 ```
-② Virtualbox + Kali Rolling 的双网卡更优雅解决方案
+2.  Virtualbox + Kali Rolling 的双网卡更优雅解决方案
 
 复制以下内容到「终端(Terminal)」回车执行
 ```
@@ -114,7 +114,7 @@ EOF
 
 systemctl restart networking
 ```
-③从屏幕右上角的菜单进入设置，在侧边栏选中Network，从右边进入已连接的那块网卡的设置界面（不同版本可能界面稍微不一样），然后点右下角的Remove Connection Profile。然后就可以启动另一块没有连通的网卡了。
+3. 从屏幕右上角的菜单进入设置，在侧边栏选中Network，从右边进入已连接的那块网卡的设置界面（不同版本可能界面稍微不一样），然后点右下角的Remove Connection Profile。然后就可以启动另一块没有连通的网卡了。
 ![](双网卡解决图片1.PNG)
 ![](双网卡解决图片2.PNG)
 
