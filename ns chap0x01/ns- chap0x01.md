@@ -15,7 +15,8 @@
 * 安装好Kali虚拟器
 * 查看虚拟介质管理，然后将Kali的类型改为**多重加载**，并进行释放。然后复制其所在的位置。
 ![](虚拟介质管理多重加载.PNG)
-* 查看Kali虚拟机设置-存储，在SATA处添加虚拟硬盘，选择“使用现有的虚拟盘”，将复制好的位置粘贴进路径中，选择“确定”。
+* 查看Kali虚拟机设置-存储，在SATA处添加虚拟硬盘，选择“使用现有的虚拟盘”，将复制的位置粘贴进路径，选择“确定”。
+
 ![](添加虚拟硬盘.PNG)
 * 新建虚拟机，选择“使用已有的虚拟硬盘文件”，创建虚拟机。虚拟硬盘的多重加载完成。
 ![](多重加载结束.PNG)
@@ -30,7 +31,7 @@ Internal Network(eth0) ip:192.168.56.2
 Internal Network(eth0) ip:192.168.56.1
 NAT Network(eth1) ip:10.0.2.4
 ```
-####配置成功截图：
+#### 配置成功截图：
 * 攻击者网络配置图：
 ![](攻击者网络.PNG)
 * 靶机网络配置图：
@@ -51,28 +52,30 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 iptables -t nat -A POSTROUTING　-s 192.168.56.0/24 -o eth1 -j  MASQUERADE
 ```
 * 配置图片
+
 ![](转发配置.PNG)
+
 可以在网关的转发表中看到转发的规则
 
 ### 四、连通性测试
 * 靶机ping通网关
 ![](靶机ping网关.PNG)
-靶机ping通攻击者
+* 靶机ping通攻击者
 ![](靶机ping攻击者.PNG)
-靶机连网
-![](靶机上网.PNG)
+* 靶机连网
+![](靶机连网.PNG)
 * 攻击者ping通网关
 ![](攻击者ping网关.PNG)
-攻击者ping靶机不通
+* 攻击者ping靶机不通
 ![](攻击者ping靶机.PNG)
-攻击者连网
-![](攻击者上网.PNG)
+* 攻击者连网
+![](攻击者连网.PNG)
 * 网关ping通攻击者
 ![](网关ping攻击者.PNG)
-网关ping通靶机
+* 网关ping通靶机
 ![](网关ping靶机.PNG)
-网关连网
-![](网关上网.PNG)
+* 网关连网
+![](网关连网.PNG)
 
 
 ### 五、网络拓扑图
@@ -126,7 +129,7 @@ netmask 255.255.255.0
 ```
 
 
-* 参考文献：
+## 参考文献：
 [Virtualbox 多重加载 高级功能介绍](https://blog.csdn.net/jeanphorn/article/details/45056251)
 [VirtualBox: two network interfaces (NAT and host-only ones) in a Debian guest on Ubuntu](https://unix.stackexchange.com/questions/37122/virtualbox-two-network-interfaces-nat-and-host-only-ones-in-a-debian-guest-on)
 [kali网络配置](https://www.jianshu.com/p/019935e003b4)
