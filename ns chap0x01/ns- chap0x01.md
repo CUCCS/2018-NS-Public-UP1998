@@ -130,6 +130,6 @@ netmask 255.255.255.0
 
 
 ## 参考文献：
-[Virtualbox 多重加载 高级功能介绍](https://blog.csdn.net/jeanphorn/article/details/45056251)
-[VirtualBox: two network interfaces (NAT and host-only ones) in a Debian guest on Ubuntu](https://unix.stackexchange.com/questions/37122/virtualbox-two-network-interfaces-nat-and-host-only-ones-in-a-debian-guest-on)
-[kali网络配置](https://www.jianshu.com/p/019935e003b4)
+* [Virtualbox 多重加载 高级功能介绍](https://blog.csdn.net/jeanphorn/article/details/45056251)
+* [VirtualBox: two network interfaces (NAT and host-only ones) in a Debian guest on Ubuntu](https://unix.stackexchange.com/questions/37122/virtualbox-two-network-interfaces-nat-and-host-only-ones-in-a-debian-guest-on)
+* [kali网络配置](https://www.jianshu.com/p/019935e003b4)
