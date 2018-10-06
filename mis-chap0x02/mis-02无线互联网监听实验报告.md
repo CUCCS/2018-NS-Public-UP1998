@@ -159,5 +159,9 @@ SSID应该包含在Beacon Frame、Probe Request、Probe Response、Association R
 
 ## 六、参考资料
  [无线接入过程](https://blog.csdn.net/hmxz2nn/article/details/79937344)
+
  [移动互联网安全无线接入网监听](http://sec.cuc.edu.cn/huangwei/course/2017/misLecture0x02.pdf)
- [移动互联网安全教材](https://sec.cuc.edu.cn/huangwei/textbook/mis )
+ 
+ [移动互联网安全教材](https://sec.cuc.edu.cn/huangwei/textbook/mis)
+ 
+ [参考同学作业](https://github.com/CUCCS/2018-NS-Public-Jasmine2020/blob/ms_02/MobileSecurityHw02/mis_02无线接入网监听.md)
