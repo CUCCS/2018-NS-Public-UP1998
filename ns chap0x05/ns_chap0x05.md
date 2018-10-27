@@ -40,7 +40,7 @@ TCP连接是客户机和服务器之间的三次握手。如果进行了三方�
 
 ![](x_filtered.PNG)
 
-如果服务器使用ICMP包进行响应，该包具有ICMP不可到达错误类型3和ICMP代码1、2、3、9、10或13，那么端口将被过滤，无论端口是打开的还是关闭的，都无法从响应中推断出来。
+如果服务器使用ICMP包进行响应，该包具有ICMP不可到达错误类型3和ICMP代码1、2、3、9、10或13，那么端口的状态将被扫描器判定为被过滤，无论端口是打开的还是关闭的，都无法从响应中推断出来。
 
 - [tcp_xmas_scan.py](pycode/tcp_xmas_scan.py)
 
@@ -52,7 +52,7 @@ TCP连接是客户机和服务器之间的三次握手。如果进行了三方�
 
 ### UDP scan
 TCP是面向连接的协议，UDP是无连接的协议。
-面向连接的协议是一种协议，在这种协议中，客户端和服务器之间的通信通道应该是可用的，只有这样才能进行进一步的包传输。如果客户机和服务器之间没有通信通道，则不会进行进一步的通信。
+面向连接的协议的特点是当通信信道在客户端和服务器之间可用时才能进行下一步的分组传输。如果客户机和服务器之间没有可用的通信通道时，则不会进行进一步的通信。
 无连接协议是指在不检查客户机和服务器之间是否有通信通道的情况下进行包传输的协议。假设目的地是可用的，那么数据就会被发送到目的地。
 
 ![](u_open.PNG)
@@ -116,6 +116,7 @@ systemctl start apache2
 iptables -A INPUT -p tcp --dport 80 -j DROP
 ```
 
+![](iptables.PNG)
 ![](v的端口过滤.PNG)
 
 ### UDP
@@ -253,6 +254,9 @@ nc -ulp 53
 ```
 hostnamectl set-hostname victim
 ```
+* UDP修改 nc 的启动参数为```nc -u -l -p 53 < /etc/passwd```，就可以被目前的扫描逻辑判断为开启。
+并修改 ```elif (udp_scan_resp.haslayer(UDP))``` 为 ```elif (udp_scan_resp.haslayer(UDP) or udp_scan_resp.getlayer(IP).proto == IP_PROTOS.udp)```
+
 
 ## 九、参考资料
 
