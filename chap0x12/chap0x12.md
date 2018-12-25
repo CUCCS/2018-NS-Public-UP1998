@@ -10,6 +10,14 @@ apt-get install bro bro-aux
 报错:```could not get lock /var/lib/dpkg/lock -open```。
 出现这个错误的原因可能是有另外一个程序正在运行，导致资源被锁不可用。而导致资源被锁的原因，可能是上次安装时没有正常完成。
 
+而如果是刚打开虚拟机，```apt-get```在后台因系统自动更新故有程序正在运行，导致资源被锁不可用。
+
+```
+ ps aux | grep apt 查看后台运行的apt进程
+```
+
+![](img/apt后台.PNG)
+
 * 在终端输入以下命令
 ```
 rm /var/cache/apt/archives/lock
